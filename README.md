@@ -1,4 +1,5 @@
 # Introduction
+**Open The Page in Windows for The Best Experience**
 This is a page for those who wanted to know my previous work, all combined and bundled into a website. If you are a recruiter, you may find this useful, and do not hesitate to reach me out if you find what you see interesting. 
 
 Project was done by using pure HTML CSS and JS, without any frameworks, so any inconsistent RWD might be the result of oversight due to the project doesn't use any frameworks. 
