@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: #1b1d36;
+    box-sizing: border-box;
+    font-family: 'inter';
+    user-select: none;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(transparent, #99d6ea, transparent);
+}
+
+#cursor {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 10px;
+    aspect-ratio: 1;
+    background: #99d6ea;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 10001;
+}
+
+.section {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    max-height: 900px;
+}
+
+.main-text {
+    background-color: transparent;
+    font-weight: 400;
+    display: block;
+    letter-spacing: 5px;
+
+    color: #99d6ea;
+}
+
+.secondary-text {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 5px;
+    color: #e1e7ec;
+    display: block;
+    margin-right: -6px;
+}
+
+.secondary-text.paragraph {
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Header */
+#header {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+#header-container {
+    background-color: transparent;
+    position: fixed;
+    display: flex;
+    width: 100%;
+    max-width: 1800px;
+    z-index: 10000;
+    background: none;
+    padding-top: 20px;
+}
+
+
+.icons {
+    background-color: #17182c;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#snowman-topleft {
+    width: 30px;
+}
+
+#left-side-header-container {
+    background-color: transparent;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    gap: 10px;
+    left: 35px;
+}
+
+#date-container {
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+}
+
+.date {
+    background-color: transparent;
+    color: #99d6ea;
+    font-weight: 400;
+}
+
+#date-number {
+    font-size: 14px;
+}
+
+#date-day {
+    font-size: 8px;
+}
+
+#middle-side-header-container {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #17182c;
+    width: 100%;
+    max-width: 400px;
+    height: 40px;
+    border-radius: 5px;
+    gap: 60px;
+}
+
+.header-menu {
+    font-size: 14px;
+    text-align: center;
+}
+
+.menu {
+    text-decoration: none;
+    background-color: transparent;
+    text-align: center;
+}
+
+#right-side-header-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background: transparent;
+    right: 35px;
+    gap: 10px;
+}
+
+.img-icons {
+    background-color: transparent;
+    width: 20px;
+}
+
+#snowman-logo {
+    width: 30px;
+}
+
+.header-menu.active {
+    color: #fca6d1;
+}
+
+.menu:hover {
+    color: #e1e7ec;
+}
+
+.hover-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) scale(0.8);
+    opacity: 0;
+    white-space: nowrap;
+    padding: 5px;
+    pointer-events: none;
+    background: rgba(23, 24, 44, 0.9);
+    color: #99d6ea;
+    border-radius: 4px;
+    font-size: 12px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    background-color: transparent;
+    font-weight: 400;
+    letter-spacing: 5px;
+}
+
+#left-side-header-container .hover-text {
+    left: calc(100% + 5px);
+}
+
+#right-side-header-container .hover-text {
+    right: calc(100% + 5px);
+}
+
+@media (max-width:400px) {
+    
+    
+
+    #header-container{
+        padding-top: 15px;
+    }
+
+    #left-side-header-container{
+        left: 15px;
+    }
+
+    #right-side-header-container{
+        right: 15px;
+    }
+
+    .img-icons{
+        width: 17.5px;
+    }
+
+    #snowman-logo{
+        width: 25px;
+    }
+
+    #middle-side-header-container {
+        max-width: 300px;
+        gap: 40px;
+    }
+
+    .main-text{
+        font-size: 14px;
+    }
+
+    #date-number{
+        font-size: 12px;
+    }
+
+    #date-day{
+        font-size: 6px;
+    }
+
+    .secondary-text{
+        font-size: 10px;
+    }
+
+    .secondary-text.paragraph{
+        font-size: 10px;
+    }
+
+
+}
+
+@media (max-width:600px)  {
+    #middle-side-header-container {
+        max-width: 300px;
+    }
+    
+    #cursor{
+        display: none;
+    }
+}
+
+@media (max-width:500px)  {
+    #middle-side-header-container {
+        max-width: 250px;
+    }
+    .header-menu{
+        font-size: 12px;
+    }
+    
+}
+
+
+
+@media (max-width:450px)  {
+    #middle-side-header-container {
+        max-width: 225px;
+    }
+}
