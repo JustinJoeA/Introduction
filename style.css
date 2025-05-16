@@ -39,22 +39,26 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(-135deg);
+    
     width: 100%;
     aspect-ratio: 1;
     max-width: 240px;
     max-height: 240px;
+    animation: gyro 50s infinite;
+    animation-timing-function: linear;
 }
 
 #circle-2 {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
+    
     width: 100%;
     aspect-ratio: 1;
     max-width: 260px;
     max-height: 260px;
+    animation: invertgyro 70s infinite;
+    animation-timing-function: linear;
 }
 
 #full-circle {
@@ -68,6 +72,24 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+@keyframes invertgyro {
+    from{
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+    to{
+        transform: translate(-50%, -50%) rotate(-315deg);
+    }
+}
+
+@keyframes gyro {
+    from{
+        transform: translate(-50%, -50%) rotate(-135deg);
+    }
+    to{
+        transform: translate(-50%, -50%) rotate(225deg);
+    }
 }
 
 #landing-page-logo {
@@ -86,6 +108,10 @@
     justify-content: center;
     flex-direction: column;
     gap: 5px;
+}
+
+#current-job{
+    padding: 0 50px;
 }
 
 #landing-page-footer {
@@ -137,6 +163,7 @@ button {
 }
 
 .main-text.project-selection-menu {
+    display: block;
     letter-spacing: 3px;
     text-align: right;
 }
@@ -208,15 +235,13 @@ button {
         margin-bottom: 20px;
         margin-top: 10px;
         flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
+        justify-content: space-between;
+        gap: 0;
     }
 
     .main-text.project-selection-menu{
         text-align: center;
-        font-size: 12px;
-        width: 100%;
+        width: auto;
     }
 
     .project-overview-container{
@@ -227,53 +252,18 @@ button {
         padding-top:60px;
     }
 
-}
-
-@media (max-width:300px){
-    #circle-container {
-        max-width: 180px;
-        max-height: 180px;
+    .project-title.main-text{
+        font-size: 16px;
     }
 
-    .circle{
-        border-radius: 50%;
-        background-color: transparent;
-        border-top: 1.5px solid transparent;
-        border-left: 1.5px solid #99d6ea;
-        border-right: 1.5px solid #99d6ea;
-        border-bottom: 1.5px solid #99d6ea;
+    .main-text.project-selection-menu.menu{
+        font-size: 10px;
     }
 
-    #circle-1 {
-        max-width: 150px;
-        max-height: 150px;
+    #landing-page-footer-text{
+        font-size: 10px;
     }
 
-    #circle-2 {
-        max-width: 165px;
-        max-height: 165px;
-    }
-
-    #full-circle {
-        max-width: 180px;
-        max-height: 180px;
-        border-top: 1.5px solid #99d6ea;
-    }
-
-    #landing-page-logo {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: transparent;
-        width: 135px;
-    }
-}
-
-
-@media (max-width:400px){
-
-   
     #circle-container {
         max-width: 220px;
         max-height: 220px;
@@ -320,4 +310,12 @@ button {
     #current-job.secondary-text{
         font-size: 10px;
     }
+}
+
+
+
+@media (max-width:400px){
+    
+
+    
 }
